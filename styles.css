@@ -222,6 +222,8 @@ a {
   place-items: center;
   min-height: 680px;
   isolation: isolate;
+  --progress: 0;
+  transform: translate3d(0, var(--hero-y, 0px), 0);
 }
 
 .phone-shell {
@@ -297,12 +299,14 @@ a {
 .ticket-card-left {
   left: 0;
   top: 20%;
+  transform: translate3d(var(--ticket-left-x, 0px), var(--ticket-left-y, 0px), 0);
 }
 
 .ticket-card-right {
   right: 0;
   bottom: 18%;
   background: var(--gold);
+  transform: translate3d(var(--ticket-right-x, 0px), var(--ticket-right-y, 0px), 0);
 }
 
 .proof-band {
@@ -354,7 +358,9 @@ a {
   display: flex;
   width: max-content;
   gap: 34px;
-  animation: marquee 30s linear infinite;
+  --progress: 0;
+  transform: translate3d(var(--marquee-x, 0%), 0, 0);
+  will-change: transform;
 }
 
 .marquee-track span {
@@ -402,13 +408,16 @@ a {
 }
 
 .story-card {
+  --progress: 0;
   cursor: pointer;
   min-width: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: clamp(18px, 3vw, 34px);
   background: rgba(255, 253, 247, 0.72);
-  transition: background 260ms var(--ease), transform 260ms var(--ease), border-color 260ms var(--ease);
+  box-shadow: inset 0 0 0 999px rgba(16, 20, 34, var(--story-shadow, 0));
+  transform: translate3d(var(--story-x, 0px), 0, 0);
+  will-change: transform, box-shadow;
 }
 
 .story-card:hover,
@@ -416,7 +425,6 @@ a {
   background: var(--ink);
   color: var(--white);
   border-color: var(--ink);
-  transform: translateX(8px);
 }
 
 .story-card h3 {
@@ -449,13 +457,27 @@ a {
   transform: translate(28px, 24px) rotate(-5deg);
 }
 
-.feature-phone img {
-  transition: opacity 260ms var(--ease), transform 420ms var(--ease);
+.feature-screen-stack {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 215 / 465;
+  border-radius: 27px;
+  background: #f4f4f7;
 }
 
-.feature-phone img.is-changing {
-  opacity: 0.35;
-  transform: scale(0.985);
+.feature-screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: var(--screen-opacity, 0);
+  transform: scale(var(--screen-scale, 1.012));
+  will-change: opacity, transform;
+}
+
+.feature-screen:first-child {
+  --screen-opacity: 1;
 }
 
 .narrative {
@@ -477,8 +499,8 @@ a {
 }
 
 .line-highlight {
-  color: rgba(16, 20, 34, 0.2);
-  transition: color 500ms var(--ease);
+  --progress: 0;
+  color: rgba(16, 20, 34, var(--line-alpha, 0.2));
 }
 
 .line-highlight.active {
@@ -503,6 +525,7 @@ a {
 }
 
 .arc-step {
+  --progress: 0;
   position: relative;
   display: grid;
   grid-template-columns: 72px minmax(0, 1fr) minmax(220px, 0.5fr);
@@ -516,6 +539,9 @@ a {
   background:
     radial-gradient(circle at 88% 20%, rgba(243, 185, 0, 0.16), transparent 34%),
     rgba(255, 253, 247, 0.82);
+  opacity: var(--arc-opacity, 0.25);
+  transform: translate3d(0, var(--scrub-y, 24px), 0);
+  will-change: opacity, transform;
 }
 
 .arc-step-dark {
@@ -579,11 +605,11 @@ a {
   border-radius: 26px;
   background: #080b13;
   box-shadow: 0 22px 58px rgba(16, 20, 34, 0.22);
-  transform: rotate(3deg);
+  transform: translate3d(0, var(--arc-phone-y, 18px), 0) rotate(3deg);
 }
 
 .arc-step:nth-child(2) .arc-mini-phone {
-  transform: rotate(-3deg);
+  transform: translate3d(0, var(--arc-phone-y, 18px), 0) rotate(-3deg);
 }
 
 .arc-mini-phone img {
@@ -693,20 +719,10 @@ a {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
+  --progress: 0;
+  opacity: var(--scrub-opacity, 0.18);
+  transform: translate3d(0, var(--scrub-y, 24px), 0);
+  will-change: opacity, transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -840,7 +856,8 @@ a {
   }
 
   .phone-shell img,
-  .phone-shell::after {
+  .phone-shell::after,
+  .feature-screen-stack {
     border-radius: 22px;
   }
 

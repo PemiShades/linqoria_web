@@ -4,10 +4,11 @@
 
 1. Immediate promise: Linqoria is positioned as event control, not generic planning software.
 2. Proof band: budgets, roles, and entry operations answer the first trust objections.
-3. Kinetic marquee: reinforces the operating verbs without adding another static feature grid.
-4. Device story: scroll and hover swap real app screens so the product becomes the evidence.
+3. Scroll-scrubbed marquee: reinforces operating verbs at the reader's pace instead of running independently.
+4. Device story: scroll position crossfades real app screens so the product becomes the evidence.
 5. Conversion spine: commitment, financial proof, and arrival are shown as compact decision moments with small product fragments.
-6. Final CTA: every path resolves to the Google Play download button.
+6. Local reality section: adds event-scale, staged payments, and service-delivery context instead of repeating features.
+7. Final CTA: every path resolves to the Google Play download button.
 
 ## Design System
 
@@ -36,9 +37,10 @@ Easing:
 
 Trigger logic:
 - Navigation glass appears after 18px scroll.
-- Narrative lines activate when they enter the central reading band.
-- Device screen changes on story card hover, focus, click, and scroll visibility.
-- Hero device parallax uses requestAnimationFrame and respects reduced motion.
+- All reveal, highlight, marquee, arc, and device emphasis values are scrubbed from viewport progress.
+- Device screens crossfade from story-card proximity to the viewport reading band.
+- No infinite marquee or observer-triggered reveal is used; motion cannot outrun user scroll.
+- Reduced-motion users get settled, non-scrubbed states.
 
 ## Stack Recommendation
 
@@ -60,12 +62,12 @@ Hero:
 
 Marquee:
 - Use duplicated text inside one flex track.
-- Animate `transform` only; do not animate left or width.
+- Scrub `transform` from section scroll progress; do not use independent looping animation.
 
 Interactive device:
-- Each `.story-card` owns a `data-screen` URL.
-- The script swaps the pinned phone image based on hover/focus/click and scroll intersection.
-- Add new features by adding a card and screenshot, not by changing JS.
+- Each `.story-card` corresponds to the same index in `.feature-screen`.
+- The script crossfades stacked screenshots from scroll proximity, avoiding timed swaps.
+- Add new features by adding a card and matching screenshot in the same order.
 
 Conversion spine:
 - Use compact `.arc-step` rows instead of oversized screenshots.

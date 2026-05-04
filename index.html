@@ -61,8 +61,8 @@
           </div>
         </div>
 
-        <div class="hero-stage" data-parallax="0.14" aria-label="Linqoria app preview">
-          <div class="ticket-card ticket-card-left reveal">
+        <div class="hero-stage" aria-label="Linqoria app preview">
+          <div class="ticket-card ticket-card-left">
             <span>Budget held</span>
             <strong>NGN 4.5m</strong>
           </div>
@@ -70,7 +70,7 @@
             <div class="phone-speaker"></div>
             <img src="./assets/screen-wallet.png" alt="Linqoria wallet cockpit screen" />
           </div>
-          <div class="ticket-card ticket-card-right reveal">
+          <div class="ticket-card ticket-card-right">
             <span>Entry status</span>
             <strong>Live</strong>
           </div>
@@ -80,23 +80,23 @@
       <section id="proof" class="proof-band">
         <div class="proof-item">
           <span>01</span>
-          <strong>Escrow-aware budgets</strong>
-          <p>Money stays visible, allocated, and accountable.</p>
+          <strong>Protected commitment</strong>
+          <p>Deposits and event wallets are treated as trust signals, not background transactions.</p>
         </div>
         <div class="proof-item">
           <span>02</span>
-          <strong>Verified event roles</strong>
-          <p>Clients, planners, providers, and ushers each see the right surface.</p>
+          <strong>Permissioned work</strong>
+          <p>Each collaborator enters through a role-aware surface, reducing confusion before the event scales.</p>
         </div>
         <div class="proof-item">
           <span>03</span>
-          <strong>Door-ready operations</strong>
-          <p>Guest flow, access, and scan actions stay close to the event.</p>
+          <strong>Verified arrival</strong>
+          <p>Guest access is designed to become operational the moment planning becomes foot traffic.</p>
         </div>
       </section>
 
       <section class="marquee" aria-label="Linqoria capabilities">
-        <div class="marquee-track">
+        <div class="marquee-track" data-scrub data-marquee>
           <span>Plan the room</span>
           <span>Hold the funds</span>
           <span>Brief the team</span>
@@ -112,42 +112,47 @@
 
       <section id="console" class="console section-frame">
         <div class="console-copy">
-          <p class="eyebrow">Device-centered storytelling</p>
-          <h2>A live workspace that changes with the job.</h2>
+          <p class="eyebrow">Interface behavior</p>
+          <h2>The screen narrows attention to the next decision.</h2>
           <p>
-            The app is not a dashboard squeezed into a phone. It behaves like a field console: direct, legible, and built around the next decision.
+            Linqoria does not ask every user to read the same dashboard. It changes the emphasis by job: ownership, people, money, then entry.
           </p>
         </div>
 
         <div class="console-grid">
           <div class="story-rail" aria-label="Feature story list">
-            <article class="story-card active" data-screen="./assets/screen-control.png">
-              <span>Control</span>
-              <h3>Know who owns the event.</h3>
-              <p>Authority, readiness, and wallet flow stay visible without asking a team member for updates.</p>
+            <article class="story-card active">
+              <span>Ownership</span>
+              <h3>Start from authority.</h3>
+              <p>The first surface clarifies who manages the event, which mode is active, and what is ready.</p>
             </article>
-            <article class="story-card" data-screen="./assets/screen-team.png">
-              <span>Team</span>
-              <h3>Assign work without losing context.</h3>
-              <p>Planners and providers can be added, funded, reviewed, and opened from one operational surface.</p>
+            <article class="story-card">
+              <span>Delegation</span>
+              <h3>Move people into position.</h3>
+              <p>Providers and planners are connected to the event with enough context to act without a long briefing.</p>
             </article>
-            <article class="story-card" data-screen="./assets/screen-budget.png">
-              <span>Budget</span>
-              <h3>Make financial structure readable.</h3>
-              <p>Categories, pending amounts, spent totals, and event wallet state are designed for quick checks.</p>
+            <article class="story-card">
+              <span>Ledger</span>
+              <h3>Keep money legible.</h3>
+              <p>Budget categories and wallet totals are presented as working decisions, not accounting clutter.</p>
             </article>
-            <article class="story-card" data-screen="./assets/screen-tasks.png">
-              <span>Entry</span>
-              <h3>Prepare the door before pressure arrives.</h3>
-              <p>Checklists and workspace actions bring console, guests, ushers, and access creation into reach.</p>
+            <article class="story-card">
+              <span>Handoff</span>
+              <h3>Convert plans into entry action.</h3>
+              <p>Tasks, guests, and usher access sit where an event team needs them when the room opens.</p>
             </article>
           </div>
 
           <div class="device-pin">
             <div class="phone-shadow"></div>
-            <div class="phone-shell feature-phone">
+            <div class="phone-shell feature-phone" id="featurePhone">
               <div class="phone-speaker"></div>
-              <img id="featureScreen" src="./assets/screen-control.png" alt="Linqoria app feature screen" />
+              <div class="feature-screen-stack">
+                <img class="feature-screen" src="./assets/screen-control.png" alt="Linqoria event control screen" />
+                <img class="feature-screen" src="./assets/screen-team.png" alt="Linqoria team screen" />
+                <img class="feature-screen" src="./assets/screen-budget.png" alt="Linqoria budget screen" />
+                <img class="feature-screen" src="./assets/screen-tasks.png" alt="Linqoria entry tasks screen" />
+              </div>
             </div>
           </div>
         </div>
@@ -157,19 +162,19 @@
         <div class="arc-heading">
           <p class="eyebrow">The persuasion arc</p>
           <h2>
-            <span class="line-highlight">Confidence first.</span>
-            <span class="line-highlight">Proof in the money.</span>
-            <span class="line-highlight">Control at the door.</span>
+            <span class="line-highlight">Belief before the booking.</span>
+            <span class="line-highlight">Proof before the payout.</span>
+            <span class="line-highlight">Order before the entrance.</span>
           </h2>
         </div>
 
         <div class="conversion-spine">
-          <article class="arc-step reveal">
+          <article class="arc-step">
             <div class="arc-index">01</div>
             <div class="arc-copy">
               <span>Commitment</span>
-              <h3>Show control before anyone spends.</h3>
-              <p>Authority, readiness, and wallet state answer the first client question: who is actually in charge?</p>
+              <h3>Give the client something concrete to trust.</h3>
+              <p>The event is framed as a managed workspace before money, vendors, and guests start moving.</p>
             </div>
             <div class="arc-visual">
               <div class="arc-mini-phone">
@@ -182,12 +187,12 @@
             </div>
           </article>
 
-          <article class="arc-step arc-step-dark reveal">
+          <article class="arc-step arc-step-dark">
             <div class="arc-index">02</div>
             <div class="arc-copy">
               <span>Financial proof</span>
-              <h3>Make the budget feel inspectable.</h3>
-              <p>Spend, pending amounts, allocations, and disbursement history stay visible without turning the interface into accounting software.</p>
+              <h3>Turn deposit anxiety into visible allocation.</h3>
+              <p>Budget structure shows where commitment is going while preserving the calm of a consumer app.</p>
             </div>
             <div class="arc-visual">
               <div class="arc-mini-phone">
@@ -200,12 +205,12 @@
             </div>
           </article>
 
-          <article class="arc-step reveal">
+          <article class="arc-step">
             <div class="arc-index">03</div>
             <div class="arc-copy">
               <span>Arrival</span>
-              <h3>Turn pressure into a checklist.</h3>
-              <p>Entry console, guests, ushers, and access creation live close together so event day feels prepared, not improvised.</p>
+              <h3>Close the planning loop at the entrance.</h3>
+              <p>The last mile becomes a controlled handoff from plan to guest movement.</p>
             </div>
             <div class="arc-visual">
               <div class="arc-mini-phone">
@@ -222,21 +227,21 @@
 
       <section class="trust-section section-frame">
         <div>
-          <p class="eyebrow">Why it converts</p>
-          <h2>It reduces the exact anxieties that stop bookings.</h2>
+          <p class="eyebrow">Built for local event reality</p>
+          <h2>Designed around the conditions that make events hard to run.</h2>
         </div>
         <div class="trust-list">
           <article>
-            <span>Risk</span>
-            <p>Clients see structured budgets, controlled approvals, and wallet flow before commitment feels fragile.</p>
+            <span>Scale</span>
+            <p>Weddings, launches, dinners, and brand events can move from intimate teams to high-volume guest flow without changing tools.</p>
           </article>
           <article>
-            <span>Coordination</span>
-            <p>Every role has a defined surface, so teams do not drift into chat chaos.</p>
+            <span>Payment behavior</span>
+            <p>Budgets, savings, allocations, and provider payouts reflect how event money actually moves in stages.</p>
           </article>
           <article>
-            <span>Arrival</span>
-            <p>Guest and usher access stays ready for the moment attention moves from planning to the door.</p>
+            <span>Service delivery</span>
+            <p>Providers, planners, and temporary staff can be coordinated without forcing everyone into the same full account experience.</p>
           </article>
         </div>
       </section>
